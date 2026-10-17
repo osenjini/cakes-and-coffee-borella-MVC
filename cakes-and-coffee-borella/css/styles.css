@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Cakes and Coffee Borella - Custom Stylesheet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-espresso-900: #1b100c;
+  --color-espresso-800: #2b1a13;
+  --color-espresso-700: #3e261c;
+  --color-caramel-500: #c68b59;
+  --color-caramel-600: #b07746;
+  --color-amber-500: #d97706;
+  --color-cream-50: #fbf9f5;
+  --color-cream-100: #f4eee3;
+  --color-cream-200: #e9decb;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-cream-50);
+  color: #2c2523;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Glassmorphism */
+.glass-nav {
+  background: rgba(251, 249, 245, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(222, 212, 196, 0.45);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(233, 222, 203, 0.6);
+}
+
+.glass-drawer {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Soft Warm Shadows */
+.shadow-warm-sm {
+  box-shadow: 0 2px 8px -1px rgba(62, 38, 28, 0.06), 0 1px 3px -1px rgba(62, 38, 28, 0.04);
+}
+
+.shadow-warm-md {
+  box-shadow: 0 8px 24px -4px rgba(62, 38, 28, 0.08), 0 3px 6px -2px rgba(62, 38, 28, 0.04);
+}
+
+.shadow-warm-lg {
+  box-shadow: 0 20px 35px -8px rgba(62, 38, 28, 0.12), 0 8px 16px -4px rgba(62, 38, 28, 0.06);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4eee3;
+}
+::-webkit-scrollbar-thumb {
+  background: #c68b59;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b07746;
+}
+
+/* Card hover zoom */
+.hover-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Hero gradient overlays */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(27, 16, 12, 0.72) 0%, rgba(27, 16, 12, 0.88) 100%);
+}
+
+.radial-glow {
+  background: radial-gradient(circle at center, rgba(198, 139, 89, 0.15) 0%, rgba(251, 249, 245, 0) 70%);
+}
+
+/* Pulsing badge animation */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+.pulse-indicator {
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+/* Subtle Shimmer for Highlighting */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.btn-shimmer {
+  background-size: 200% 100%;
+  transition: all 0.3s ease;
+}
+
+/* Drawer open/close transitions */
+.cart-drawer-open {
+  transform: translateX(0);
+}
+.cart-drawer-closed {
+  transform: translateX(100%);
+}
+
+/* Toast Notification Animation */
+@keyframes toastSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.toast-enter {
+  animation: toastSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Badge tags */
+.tag-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+}
